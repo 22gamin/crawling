@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 초미세먼지 농도</title>
+    <style>
+        body{
+            background-image: url('https://love.seoul.go.kr/pds/Board/seoul_news_write/02_5_1[2].jpg');
+            background-repeat: no-repeat;
+            background-size : cover ;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:center; margin-top: 150px;">
+        <h1 style = "font-size: 80px; color: rgb(255, 178, 77)"> 오늘의  <span style = "font-size: 80px; color: rgb(255, 73, 60)">초</span> 미세먼지 농도 </h1> 
+        <br>
+        <br>
+        <br>
+        <!-- style = "font-size: 50px"> -->
+        <form action="/u_dust" method="get" name="search" style = "font-size: 30px"> 지역검색 
+        <input type="text" name="area" style=" width: 450px;height: 30px;">
+        <input type="submit" value="검색실행" style="height: 30px;">  
+    </form>
+    </div><br><br>
+    <div style="text-align:center; font-size: 30px">
+        {% if result == None %}
+            아직 검색전입니다
+        {% else %}
+            {{ result }}
+        {% endif%}
+    <br>
+    <br>
+    <a href="http://localhost:8000/main">메인으로 돌아가기</a>
+</div>
+</body>
+</html>
